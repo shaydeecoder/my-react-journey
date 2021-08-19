@@ -1,0 +1,63 @@
+.playlist {
+  &__head {
+    padding: 0.5rem 1.5rem;
+    font-weight: 100;
+    color: $light-color--1-transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__body {
+    height: 17.1rem;
+    overflow-y: scroll;
+    color: $light-color--1-transparent;
+  }
+
+  &__info-wrap {
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: $dark-color--3-transparent;
+    }
+
+    &--active {
+      background-color: $dark-color--3;
+
+      .playlist__body {
+        color: $light-color--1;
+      }
+
+      .playlist__icon-wrap {
+        background-color: $base-color;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-wrap {
+    margin-right: 1rem;
+    background-color: $dark-color--4-transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+  }
+
+  &__icon {
+    font-size: 0.6rem;
+    color: $light-color--1;
+  }
+}
