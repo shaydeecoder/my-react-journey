@@ -15,6 +15,7 @@ const useVideos = (defaultSearchTerm) => {
       },
     });
 
+    console.log(response.data);
     setVideos(response.data.items);
   };
 
