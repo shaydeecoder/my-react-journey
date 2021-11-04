@@ -1,14 +1,28 @@
 import { Component } from "react";
 import LanguageContext from "../contexts/LanguageContext";
+import ColorContext from "../contexts/ColorContext";
 
+// Pulling data from multiple contexts using context.Consumer
 class Button extends Component {
-  render() {
+  renderButtonText(value) {
+    return value === "english" ? "Submit" : "Voorleggen";
+  }
+
+  renderButton(color) {
     return (
-      <button className="ui button primary">
+      <button className={`ui button ${color}`}>
         <LanguageContext.Consumer>
-          {(value) => (value === "english" ? "Submit" : "Voorleggen")}
+          {(value) => this.renderButtonText(value)}
         </LanguageContext.Consumer>
       </button>
+    );
+  }
+
+  render() {
+    return (
+      <ColorContext.Consumer>
+        {(color) => this.renderButton(color)}
+      </ColorContext.Consumer>
     );
   }
 }

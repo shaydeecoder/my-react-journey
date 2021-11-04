@@ -1,6 +1,7 @@
 import { Component } from "react";
 import LanguageContext from "../contexts/LanguageContext";
 
+// Pulling data from a single context using this.context
 class Field extends Component {
   static contextType = LanguageContext;
 
